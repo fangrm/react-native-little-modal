@@ -1,0 +1,31 @@
+{
+  "name": "react-native-simple-modal",
+  "version": "1.0.0",
+  "description": "a simple modal component for react-native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangrm/react-native-simple-modal.git"
+  },
+  "author": "fangrm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fangrm/react-native-simple-modal/issues"
+  },
+  "homepage": "https://github.com/fangrm/react-native-simple-modal#readme",
+  "dependencies": {
+    "react-native-root-siblings": "^3.2.1"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "modal",
+    "multi-modal",
+    "popover"
+  ]
+}
