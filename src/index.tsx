@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import MyModal from "./modal-view";
 import Flex from "./flex";
-import Root from "../modal-wrapper/root";
+import Root from "./root";
 import RootSiblings from "react-native-root-siblings";
 import styles from "./styles";
 
