@@ -33,9 +33,10 @@
     "react-native",
     "ios",
     "android",
+    "multiple",
     "modal",
+    "popover",
     "little",
-    "simple",
-    "popover"
+    "simple"
   ]
 }
