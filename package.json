@@ -34,7 +34,8 @@
     "ios",
     "android",
     "modal",
-    "multi-modal",
+    "little",
+    "simple",
     "popover"
   ]
 }
