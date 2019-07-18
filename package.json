@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fangrm/react-native-simple-modal.git"
+    "url": "git+https://github.com/fangrm/react-native-little-modal.git"
   },
   "author": "fangrm",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fangrm/react-native-simple-modal/issues"
+    "url": "https://github.com/fangrm/react-native-little-modal/issues"
   },
-  "homepage": "https://github.com/fangrm/react-native-simple-modal#readme",
+  "homepage": "https://github.com/fangrm/react-native-little-modal#readme",
   "devDependencies": {
     "@types/react": "^16.8.23",
     "react": "16",
