@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   View,
   Animated,
   Easing,
   StyleSheet,
   Dimensions,
-  InteractionManager
+  BackHandler
 } from "react-native";
-import { Navigator } from "avocados";
 
 const { height } = Dimensions.get('window')
 
@@ -20,14 +19,14 @@ interface ModalViewProps {
   /**  */
   visible: boolean;
   /**  */
-  onRequestClose?: Function;
+  onRequestClose?: Function;  
   /**  */
   animationType?: "fade" | "slide" | "none";
   /** modal关闭动画结束回调 */
   onModalHide?: () => void;
 }
 
-export default class IOSModalView extends Component<ModalViewProps, any> {
+export default class IOSModalView extends React.Component<ModalViewProps, any> {
   private unmount: boolean = false
   private animDialog: any
   constructor(props) {
@@ -40,14 +39,18 @@ export default class IOSModalView extends Component<ModalViewProps, any> {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    BackHandler.addEventListener("handleRNLittleModal", this.onRequestClose)
+  }
+
+  onRequestClose = () => {
     const { onRequestClose } = this.props
-    if (onRequestClose) {
-      Navigator.customBackHandler.push({
-        key: "cModal",
-        handler: onRequestClose
-      })
-    }
+    onRequestClose ? onRequestClose() : null
+    this.disMiss(this.disMissCallback)
+    return true
+  }
+
+  componentDidMount() {
     if (this.state.visible) {
       this.show()
     }
@@ -64,10 +67,7 @@ export default class IOSModalView extends Component<ModalViewProps, any> {
   }
 
   componentWillUnmount() {
-    const { onRequestClose } = this.props
-    if (onRequestClose) {
-      Navigator.deleteBackHandler("cModal")
-    }
+    BackHandler.removeEventListener("handleRNLittleModal", this.onRequestClose)
     this.unmount = true
   }
 
