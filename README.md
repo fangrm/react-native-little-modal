@@ -80,4 +80,4 @@ Modal.alert("title", "text", [
 ### Warning
 
 - On ios platform (if you don't use "useRNModal"), modal element created by this library can\`t cover other `native` Modal elements,like: [Official Modal Element](http://facebook.github.io/react-native/docs/modal.html#content)
-- When you set useRNModal = true on ios platform, DO NOT CREATE MUTIPLE MODALS, or the app will crash! 🙃
+- When you set useRNModal = true on ios platform, DO NOT CREATE MUTIPLE MODALS ON IOS PLATFORM at the same time, or the app will crash because of a react-native bug! 🙃
