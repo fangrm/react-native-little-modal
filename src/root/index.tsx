@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, DeviceEventEmitter, Keyboard } from "react-native";
+import { View, DeviceEventEmitter } from "react-native";
 
 // top view 事件
 const TOP_VIEW_EVT_TYPE = {
@@ -30,6 +30,11 @@ export default class Root extends React.Component<any, any> {
     this.state = {
       elements: [] as TopViewElement[],
     }
+
+    Root.elements = []
+    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.ADD, this.setTopView.bind(this));
+    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.REMOVE, this.removeTopView.bind(this));
+    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.REMOVEALL, this.removeAllTopView.bind(this));
   }
 
   render() {
@@ -40,13 +45,6 @@ export default class Root extends React.Component<any, any> {
         {!list.length ? null : list}
       </React.Fragment>
     )
-  }
-
-  componentWillMount() {
-    Root.elements = []
-    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.ADD, this.setTopView.bind(this));
-    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.REMOVE, this.removeTopView.bind(this));
-    DeviceEventEmitter.addListener(TOP_VIEW_EVT_TYPE.REMOVEALL, this.removeAllTopView.bind(this));
   }
 
   componentWillUnmount() {

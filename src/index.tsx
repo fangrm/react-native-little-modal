@@ -1,4 +1,3 @@
-// 内容弹窗显示器
 import * as React from "react";
 import {
   View,
@@ -6,10 +5,10 @@ import {
   Text,
   TouchableOpacity,
   InteractionManager,
-  TextStyle,
+  Platform,
   ViewStyle,
+  TextStyle,
   ImageStyle,
-  Platform
 } from "react-native";
 import MyModal from "./modal-view";
 import Flex from "./flex";
@@ -23,10 +22,6 @@ let isModalInit = false
 
 const defaultKey = "modal_content_wrapper"
 let modalMap: any = {};
-// const TouchableFlex = Flex as any;
-
-// const contentTopOffset: number = Theme.SCREEN_HEIGHT * 0.15;
-// const contentHeight: number = Theme.SCREEN_HEIGHT - contentTopOffset;
 
 export interface btnProps {
   text: string,
@@ -57,12 +52,13 @@ export interface ModalWrapperProps {
   /** 使用RN Modal */
   useRNModal?: boolean;
   /**  */
-  contentWrapperStyle?: TextStyle | ViewStyle | ImageStyle;
+  contentWrapperStyle?: TextStyle & ViewStyle & ImageStyle;
 }
 
 export class ModalWrapper extends React.Component<ModalWrapperProps, any> {
   static defaultProps = {
-    useRNModal: !isIOS // ios默认不使用RNModal
+    useRNModal: !isIOS, // ios默认不使用RNModal,
+    modalKey: defaultKey,
   }
   public unmount: boolean = false;
   constructor(props, context) {
@@ -84,7 +80,7 @@ export class ModalWrapper extends React.Component<ModalWrapperProps, any> {
       useRNModal,
       contentWrapperStyle,
     } = this.props;
-    
+
     const wrapperStyle = [
       styles.background,
       backgroundColor === "transparent" ? styles.backgroundTransparent : {}
@@ -110,10 +106,10 @@ export class ModalWrapper extends React.Component<ModalWrapperProps, any> {
           transparent={true}
           animationType={animationType || "none"}
           onRequestClose={onRequestClose}
-          onModalHide={!useRNModal && this.onModalHide}
+          onModalHide={!useRNModal ? this.onModalHide : undefined}
         >
           <Flex
-            onPress={maskClosable && this.onClose}
+            onPress={maskClosable ? this.onClose : undefined}
             direction="column"
             justify={isSlideUp ? "end" : "center"}
             style={[styles.contentWrapper, contentWrapperStyle || {}]}

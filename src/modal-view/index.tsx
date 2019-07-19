@@ -37,10 +37,7 @@ export default class IOSModalView extends React.Component<ModalViewProps, any> {
       animationSlide: new Animated.Value(0),
       animationFade: new Animated.Value(0),
     }
-  }
-
-  componentWillMount() {
-    BackHandler.addEventListener("handleRNLittleModal", this.onRequestClose)
+    BackHandler.addEventListener("hardwareBackPress", this.onRequestClose)
   }
 
   onRequestClose = () => {
@@ -67,7 +64,7 @@ export default class IOSModalView extends React.Component<ModalViewProps, any> {
   }
 
   componentWillUnmount() {
-    BackHandler.removeEventListener("handleRNLittleModal", this.onRequestClose)
+    BackHandler.removeEventListener("hardwareBackPress", this.onRequestClose)
     this.unmount = true
   }
 
