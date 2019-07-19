@@ -50,12 +50,12 @@ Modal.alert("title", "text", [
 | Name                | Type                        | Default                     | Description                                                                                              |
 |---------------------|-----------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------|
 | animationType       | "slide" or "fade" or "node" | "none"                      | Modal show animation                                                                                     |
-| maskClosable        | boolean                     | false                       | Close the modal when maskClosable is true                                                                |
-| contentWrapperStyle | style                       |                             | Extra style for content wrapper                                                                          |
-| modalKey            | string                      | "react-native-little-modal" | A special key for the modal and you need to hide with this key                                           |
-| onModalClose        | Function                    |                             | Callback when the modal will be closed||                                                                 |
+| maskClosable        | Boolean                     | false                       | Close the modal when maskClosable is true                                                                |
+| contentWrapperStyle | Style                       |                             | Extra style for content wrapper                                                                          |
+| modalKey            | String                      | "react-native-little-modal" | A special key for the modal and you need to hide with this key                                           |
+| onModalClose        | Function                    |                             | Callback when the modal will be closed|                                                                  |
 | backgroundColor     | "black" or "transparent"    | black                       | Background color for modal                                                                               |
-| useRNModal          | boolean                     | android: true, ios: false   | warning: use it when you want to create top view, but on ios cannot create mutiple react native modals!| |
+| useRNModal          | Boolean                     | android: true, ios: false   | warning: use it when you want to create top view, but on ios cannot create mutiple react native modals!| |
 
 - content - any react element                                                                                     
 
@@ -64,10 +64,10 @@ Modal.alert("title", "text", [
 
 | Name     | Type                                                      | Default                     | Description |
 |----------|-----------------------------------------------------------|-----------------------------|-------------|
-| title    | string or React.element                                   | ""                          | title       |
-| text     | string or React.element                                   | ""                          | text        |
+| title    | String or React.element                                   | ""                          | title       |
+| text     | String or React.element                                   | ""                          | text        |
 | btns     | {text: string, onPress?: () => void, style?: TextStyle}[] |                             | buttons     |
-| modalKey | string                                                    | "react-native-little-modal" | modal key   |
+| modalKey | String                                                    | "react-native-little-modal" | modal key   |
 
 ### Warning
 
