@@ -59,7 +59,7 @@ Modal.alert("title", "text", [
 
 - content - any react element                                                                                     
 
-#### Modal.alert(title, text, btns, modalKey)
+#### Modal.alert(title, text, btns, modalKey?: string)
 
 
 | Name     | Type                                                      | Default                     | Description |
@@ -68,6 +68,14 @@ Modal.alert("title", "text", [
 | text     | String or React.element                                   | ""                          | text        |
 | btns     | {text: string, onPress?: () => void, style?: TextStyle}[] |                             | buttons     |
 | modalKey | String                                                    | "react-native-little-modal" | modal key   |
+
+#### Modal.hide(modalKey?: string)
+
+- modalKey default value is "react-native-little-modal"
+
+#### Modal.removeAll()
+
+- remove all modal elements
 
 ### Warning
 
