@@ -1,6 +1,6 @@
 {
   "name": "react-native-little-modal",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "a simple modal component for react-native",
   "main": "src/index.tsx",
   "scripts": {
