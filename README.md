@@ -53,8 +53,7 @@ Modal.alert("title", "text", [
 | maskClosable        | boolean                     | false                       | Close the modal when maskClosable is true                                                                |
 | contentWrapperStyle | style                       |                             | Extra style for content wrapper                                                                          |
 | modalKey            | string                      | "react-native-little-modal" | A special key for the modal and you need to hide with this key                                           |
-| onModalClose        | Function                    |                             | Callback when the modal will be closed                                                                   |
-|                     |                             |                             |                                                                                                          |
+| onModalClose        | Function                    |                             | Callback when the modal will be closed||                                                                 |
 | backgroundColor     | "black" or "transparent"    | black                       | Background color for modal                                                                               |
 | useRNModal          | boolean                     | android: true, ios: false   | warning: use it when you want to create top view, but on ios cannot create mutiple react native modals!| |
 
