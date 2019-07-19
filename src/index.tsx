@@ -20,7 +20,7 @@ const isIOS = Platform.OS === "ios"
 
 let isModalInit = false
 
-const defaultKey = "modal_content_wrapper"
+const defaultKey = "react-native-little-modal"
 let modalMap: any = {};
 
 export interface btnProps {
